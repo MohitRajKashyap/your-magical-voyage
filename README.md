@@ -74,7 +74,7 @@ Your Magical Voyage provides a **complete travel booking solution**:
 
 ## 🗂️ Project Structure
 
-your-magical-voyage/
+  your-magical-voyage/
 ├── src/
 │   ├── main/
 │   │   ├── java/
@@ -134,23 +134,49 @@ your-magical-voyage/
 │   │   │   ├── WEB-INF/
 │   │   │   │   └── web.xml
 │   │   │   ├── assets/
-│   │   │   │   ├── css/styles.css
-│   │   │   │   ├── js/app.js
+│   │   │   │   ├── css/
+│   │   │   │   │   └── styles.css
+│   │   │   │   ├── js/
+│   │   │   │   │   └── app.js
 │   │   │   │   ├── images/
 │   │   │   │   └── fonts/
 │   │   │   ├── views/
 │   │   │   │   ├── login.jsp
 │   │   │   │   ├── register.jsp
 │   │   │   │   ├── admin/
+│   │   │   │   │   ├── dashboard.jsp
+│   │   │   │   │   ├── users.jsp
+│   │   │   │   │   ├── flights.jsp
+│   │   │   │   │   ├── hotels.jsp
+│   │   │   │   │   ├── bookings.jsp
+│   │   │   │   │   └── pending-flights.jsp
 │   │   │   │   ├── traveler/
+│   │   │   │   │   ├── dashboard.jsp
+│   │   │   │   │   ├── book-flights.jsp
+│   │   │   │   │   ├── book-hotels.jsp
+│   │   │   │   │   ├── book-cars.jsp
+│   │   │   │   │   ├── my-bookings.jsp
+│   │   │   │   │   └── itineraries.jsp
 │   │   │   │   ├── agent/
+│   │   │   │   │   ├── dashboard.jsp
+│   │   │   │   │   ├── manage-flights.jsp
+│   │   │   │   │   ├── manage-hotels.jsp
+│   │   │   │   │   ├── manage-cars.jsp
+│   │   │   │   │   ├── manage-bookings.jsp
+│   │   │   │   │   └── messages.jsp
 │   │   │   │   └── errors/
+│   │   │   │       ├── 404.jsp
+│   │   │   │       ├── 500.jsp
+│   │   │   │       └── 403.jsp
 │   │   │   └── index.jsp
-│   │   └── resources/application.properties
-│   └── test/java/
+│   │   └── resources/
+│   │       └── application.properties
+│   └── test/
+│       └── java/
+│           ├── services/
+│           └── dao/
 ├── pom.xml
 └── README.md
-
 ---
 
 ## 💻 Tech Stack
