@@ -73,110 +73,162 @@ Your Magical Voyage provides a **complete travel booking solution**:
 ---
 
 ## 🗂️ Project Structure
+The project follows a **clean MVC + DAO architecture**, making it easy to understand, maintain, and scale.
+It is fully compatible with **Apache Tomcat deployment 🚀**.
 
-  your-magical-voyage/
-├── src/
-│   ├── main/
-│   │   ├── java/
-│   │   │   ├── config/
-│   │   │   │   ├── DatabaseConfig.java
-│   │   │   │   └── ApplicationConfig.java
-│   │   │   ├── controllers/
-│   │   │   │   ├── AuthServlet.java
-│   │   │   │   ├── FlightServlet.java
-│   │   │   │   ├── BookingServlet.java
-│   │   │   │   ├── AdminDashboardServlet.java
-│   │   │   │   ├── TravelerDashboardServlet.java
-│   │   │   │   └── TravelAgentDashboardServlet.java
-│   │   │   ├── dao/
-│   │   │   │   ├── UserDAO.java
-│   │   │   │   ├── UserDAOImpl.java
-│   │   │   │   ├── FlightDAO.java
-│   │   │   │   ├── FlightDAOImpl.java
-│   │   │   │   ├── HotelDAO.java
-│   │   │   │   ├── HotelDAOImpl.java
-│   │   │   │   ├── BookingDAO.java
-│   │   │   │   ├── BookingDAOImpl.java
-│   │   │   │   ├── MessageDAO.java
-│   │   │   │   └── MessageDAOImpl.java
-│   │   │   ├── models/
-│   │   │   │   ├── User.java
-│   │   │   │   ├── Flight.java
-│   │   │   │   ├── Hotel.java
-│   │   │   │   ├── RentalCar.java
-│   │   │   │   ├── FlightBooking.java
-│   │   │   │   ├── HotelBooking.java
-│   │   │   │   ├── CarRentalBooking.java
-│   │   │   │   ├── Message.java
-│   │   │   │   ├── TravelItinerary.java
-│   │   │   │   └── ItineraryItem.java
-│   │   │   ├── services/
-│   │   │   │   ├── UserService.java
-│   │   │   │   ├── FlightService.java
-│   │   │   │   ├── HotelService.java
-│   │   │   │   ├── BookingService.java
-│   │   │   │   └── MessageService.java
-│   │   │   ├── utils/
-│   │   │   │   ├── PasswordUtil.java
-│   │   │   │   ├── DateUtil.java
-│   │   │   │   └── ValidationUtil.java
-│   │   │   ├── filters/
-│   │   │   │   ├── AuthFilter.java
-│   │   │   │   ├── RoleFilter.java
-│   │   │   │   └── CharacterEncodingFilter.java
-│   │   │   ├── exceptions/
-│   │   │   │   ├── BookingException.java
-│   │   │   │   ├── ValidationException.java
-│   │   │   │   └── DatabaseException.java
-│   │   │   └── factory/
-│   │   │       └── ServiceFactory.java
-│   │   ├── webapp/
-│   │   │   ├── WEB-INF/
-│   │   │   │   └── web.xml
-│   │   │   ├── assets/
-│   │   │   │   ├── css/
-│   │   │   │   │   └── styles.css
-│   │   │   │   ├── js/
-│   │   │   │   │   └── app.js
-│   │   │   │   ├── images/
-│   │   │   │   └── fonts/
-│   │   │   ├── views/
-│   │   │   │   ├── login.jsp
-│   │   │   │   ├── register.jsp
-│   │   │   │   ├── admin/
-│   │   │   │   │   ├── dashboard.jsp
-│   │   │   │   │   ├── users.jsp
-│   │   │   │   │   ├── flights.jsp
-│   │   │   │   │   ├── hotels.jsp
-│   │   │   │   │   ├── bookings.jsp
-│   │   │   │   │   └── pending-flights.jsp
-│   │   │   │   ├── traveler/
-│   │   │   │   │   ├── dashboard.jsp
-│   │   │   │   │   ├── book-flights.jsp
-│   │   │   │   │   ├── book-hotels.jsp
-│   │   │   │   │   ├── book-cars.jsp
-│   │   │   │   │   ├── my-bookings.jsp
-│   │   │   │   │   └── itineraries.jsp
-│   │   │   │   ├── agent/
-│   │   │   │   │   ├── dashboard.jsp
-│   │   │   │   │   ├── manage-flights.jsp
-│   │   │   │   │   ├── manage-hotels.jsp
-│   │   │   │   │   ├── manage-cars.jsp
-│   │   │   │   │   ├── manage-bookings.jsp
-│   │   │   │   │   └── messages.jsp
-│   │   │   │   └── errors/
-│   │   │   │       ├── 404.jsp
-│   │   │   │       ├── 500.jsp
-│   │   │   │       └── 403.jsp
-│   │   │   └── index.jsp
-│   │   └── resources/
-│   │       └── application.properties
-│   └── test/
-│       └── java/
-│           ├── services/
-│           └── dao/
-├── pom.xml
-└── README.md
+---
+
+### 📁 your-magical-voyage
+
+* 📁 **src**
+
+  * 📁 **main**
+
+    * 📁 **java**
+
+      * 📁 **config**
+
+        * DatabaseConfig.java
+        * ApplicationConfig.java
+
+      * 📁 **controllers** (Servlet Layer)
+
+        * AuthServlet.java
+        * FlightServlet.java
+        * BookingServlet.java
+        * AdminDashboardServlet.java
+        * TravelerDashboardServlet.java
+        * TravelAgentDashboardServlet.java
+
+      * 📁 **dao** (Data Access Layer)
+
+        * UserDAO.java
+        * UserDAOImpl.java
+        * FlightDAO.java
+        * FlightDAOImpl.java
+        * HotelDAO.java
+        * HotelDAOImpl.java
+        * BookingDAO.java
+        * BookingDAOImpl.java
+        * MessageDAO.java
+        * MessageDAOImpl.java
+
+      * 📁 **models** (Entity Classes)
+
+        * User.java
+        * Flight.java
+        * Hotel.java
+        * RentalCar.java
+        * FlightBooking.java
+        * HotelBooking.java
+        * CarRentalBooking.java
+        * Message.java
+        * TravelItinerary.java
+        * ItineraryItem.java
+
+      * 📁 **services** (Business Logic)
+
+        * UserService.java
+        * FlightService.java
+        * HotelService.java
+        * BookingService.java
+        * MessageService.java
+
+      * 📁 **utils**
+
+        * PasswordUtil.java
+        * DateUtil.java
+        * ValidationUtil.java
+
+      * 📁 **filters** (Security & Encoding)
+
+        * AuthFilter.java
+        * RoleFilter.java
+        * CharacterEncodingFilter.java
+
+      * 📁 **exceptions**
+
+        * BookingException.java
+        * ValidationException.java
+        * DatabaseException.java
+
+      * 📁 **factory**
+
+        * ServiceFactory.java
+
+    * 📁 **webapp**
+
+      * 📁 **WEB-INF**
+
+        * web.xml
+
+      * 📁 **assets**
+
+        * 📁 css
+
+          * styles.css
+        * 📁 js
+
+          * app.js
+        * 📁 images
+        * 📁 fonts
+
+      * 📁 **views**
+
+        * login.jsp
+
+        * register.jsp
+
+        * 📁 **admin**
+
+          * dashboard.jsp
+          * users.jsp
+          * flights.jsp
+          * hotels.jsp
+          * bookings.jsp
+          * pending-flights.jsp
+
+        * 📁 **traveler**
+
+          * dashboard.jsp
+          * book-flights.jsp
+          * book-hotels.jsp
+          * book-cars.jsp
+          * my-bookings.jsp
+          * itineraries.jsp
+
+        * 📁 **agent**
+
+          * dashboard.jsp
+          * manage-flights.jsp
+          * manage-hotels.jsp
+          * manage-cars.jsp
+          * manage-bookings.jsp
+          * messages.jsp
+
+        * 📁 **errors**
+
+          * 404.jsp
+          * 500.jsp
+          * 403.jsp
+
+      * index.jsp
+
+    * 📁 **resources**
+
+      * application.properties
+
+  * 📁 **test**
+
+    * 📁 java
+
+      * 📁 services
+      * 📁 dao
+
+* pom.xml
+
+* README.md
+
 ---
 
 ## 💻 Tech Stack
